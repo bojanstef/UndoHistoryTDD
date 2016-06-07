@@ -13,6 +13,7 @@
 		0391912A1D06A37D00C74F9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039191291D06A37D00C74F9D /* Assets.xcassets */; };
 		0391912D1D06A37D00C74F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0391912B1D06A37D00C74F9D /* LaunchScreen.storyboard */; };
 		039191381D06A37D00C74F9D /* UndoHistoryTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039191371D06A37D00C74F9D /* UndoHistoryTDDTests.swift */; };
+		039191481D06A71C00C74F9D /* UndoHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039191471D06A71C00C74F9D /* UndoHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		039191331D06A37D00C74F9D /* UndoHistoryTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UndoHistoryTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		039191371D06A37D00C74F9D /* UndoHistoryTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoHistoryTDDTests.swift; sourceTree = "<group>"; };
 		039191391D06A37D00C74F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		039191471D06A71C00C74F9D /* UndoHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndoHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				039191221D06A37D00C74F9D /* AppDelegate.swift */,
 				039191241D06A37D00C74F9D /* ViewController.swift */,
+				039191471D06A71C00C74F9D /* UndoHistory.swift */,
 				039191261D06A37D00C74F9D /* Main.storyboard */,
 				039191291D06A37D00C74F9D /* Assets.xcassets */,
 				0391912B1D06A37D00C74F9D /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				039191251D06A37D00C74F9D /* ViewController.swift in Sources */,
+				039191481D06A71C00C74F9D /* UndoHistory.swift in Sources */,
 				039191231D06A37D00C74F9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

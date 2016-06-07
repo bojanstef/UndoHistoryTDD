@@ -20,17 +20,50 @@ class UndoHistoryTDDTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func test_setInitialValueNotNil() {
+        let undoList = UndoHistory(initialValue: 0)
+        XCTAssertNotNil(undoList)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+
+    func test_setInitialValueToEmptyArrayNotNil() {
+        let undoList = UndoHistory(initialValue: [])
+        XCTAssertNotNil(undoList)
     }
-    
+
+    func test_emptyIntArrayNotNil() {
+        let emptyIntArray = [Int]()
+        let undoList = UndoHistory(initialValue: emptyIntArray)
+        XCTAssertNotNil(undoList)
+    }
+
+    func test_setNewValue() {
+        var undoList = UndoHistory(initialValue: 0)
+        undoList.currentItem = 1337
+        XCTAssertEqual(undoList.currentItem, 1337)
+    }
+
+    func test_setNewArrayValue() {
+        var undoList = UndoHistory(initialValue: [1, "a"])
+        undoList.currentItem = [2, "b"]
+        XCTAssertEqual(undoList.currentItem, [2, "b"])
+    }
+
+    func test_newValueAndUndo() {
+        var undoList = UndoHistory(initialValue: 1)
+        undoList.currentItem = 2
+        XCTAssertEqual(undoList.currentItem, 2)
+        undoList.undo()
+        XCTAssertEqual(undoList.currentItem, 1)
+    }
+
+    func test_undoPastInitialValues() {
+        var undoList = UndoHistory(initialValue: [1, 2])
+        undoList.currentItem = [5, 4, 3, 2, 1]
+        XCTAssertEqual(undoList.currentItem, [5, 4, 3, 2, 1])
+        undoList.undo()
+        XCTAssertEqual(undoList.currentItem, [1, 2])
+        undoList.undo()
+        XCTAssertEqual(undoList.currentItem, [1, 2])
+    }
 }
